@@ -1,0 +1,14 @@
+{
+  "name": "chocolatique",
+  "version": "1.0.0",
+  "description": "Chocolate shop website + costing app (EN/AR) with WhatsApp ordering",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "demo": "SEED_DEMO=1 node --disable-warning=ExperimentalWarning server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": { "node": ">=22.13" },
+  "license": "UNLICENSED",
+  "dependencies": { "express": "^4.21.2" }
+}
