@@ -1,0 +1,12 @@
+# Without Docker: copy to /etc/systemd/system/, then: systemctl enable --now chocolatique
+[Unit]
+Description=Chocolatique
+After=network.target
+[Service]
+WorkingDirectory=/opt/chocolatique
+Environment=PORT=3000 DATA_DIR=/var/chocolatique TRUST_PROXY=1 COOKIE_SECURE=1
+ExecStart=/usr/bin/node --disable-warning=ExperimentalWarning server.js
+Restart=always
+User=www-data
+[Install]
+WantedBy=multi-user.target

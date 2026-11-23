@@ -1,0 +1,7 @@
+services:
+  chocolatique:
+    build: .
+    restart: unless-stopped
+    ports: ["127.0.0.1:3000:3000"]
+    volumes: ["./data:/data"]
+    # environment: [ADMIN_PASSWORD=change-me]   # only to reset the admin password

@@ -67,3 +67,9 @@ WhatsApp number (taken from the public site, `96171193278`: change it if wrong),
 - `PORT`, `DATA_DIR`, `ADMIN_PASSWORD` environment variables.
 - Behind HTTPS reverse proxy (nginx/Caddy): set `TRUST_PROXY=1 COOKIE_SECURE=1`.
 - Login and public orders are rate-limited; passwords are scrypt-hashed; all pages escape user text; Origin check on writes.
+
+## Deploy (VPS)
+
+Docker: `docker compose up -d --build` (data in `./data`), then put `deploy/nginx.conf` in front with HTTPS.
+Without Docker: `deploy/chocolatique.service` (systemd) + `deploy/nginx.conf`.
+Update later: `git pull && docker compose up -d --build`.
